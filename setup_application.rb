@@ -13,11 +13,11 @@ apply "http://github.com/coryschires/rails-templates/raw/master/setup_stylesheet
 
 # add required templates
 application_controller = run "curl http://github.com/coryschires/rails-templates/raw/master/app-templates/application_controller.rb"
-application_helper = run "curl http://github.com/coryschires/rails-templates/raw/master/app-templates/application_helper.rb"
+layout_helper = run "curl http://github.com/coryschires/rails-templates/raw/master/app-templates/layout_helper.rb"
 application_layout = run "curl http://github.com/coryschires/rails-templates/raw/master/app-templates/application.html.erb"
 
 file 'app/controllers/application_controller.rb', application_controller, :force => true
-file 'app/helpers/application_helper.rb', application_helper, :force => true
+file 'app/helpers/layout_helper.rb', layout_helper, :force => true
 file 'app/views/layouts/application.html.erb', application_layout, :force => true
 
     
