@@ -16,9 +16,9 @@ application_controller = run "curl http://github.com/coryschires/rails-templates
 application_helper = run "curl http://github.com/coryschires/rails-templates/raw/master/app-templates/application_helper.rb"
 application_layout = run "curl http://github.com/coryschires/rails-templates/raw/master/app-templates/application.html.erb"
 
-file 'app/views/layouts/admin.html.erb', application_controller, :force => true
-file 'app/views/layouts/admin.html.erb', application_helper, :force => true
-file 'app/views/layouts/admin.html.erb', application_layout, :force => true
+file 'app/controllers/application_controller.rb', application_controller, :force => true
+file 'app/helpers/application_helper.rb', application_helper, :force => true
+file 'app/views/layouts/application.html.erb', application_layout, :force => true
 
     
 # create admin section (optional)
