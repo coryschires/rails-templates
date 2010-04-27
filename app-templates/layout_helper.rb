@@ -1,13 +1,13 @@
 module LayoutHelper
   def title(page_title, show_title = true)
-    @content_for_title = page_title.to_s
+    content_for(:title) { page_title.to_s }
     @show_title = show_title
   end
 
   def show_title?
     @show_title
   end
-
+  
   def stylesheet(*args)
     content_for(:head) { stylesheet_link_tag(*args.map(&:to_s)) }
   end
@@ -22,7 +22,7 @@ module LayoutHelper
   end
 
   def meta_keywords(keywords)
-      content_for(:meta_keywords) { content_tag(:meta, nil, {:name => "keywords",  :content => keywords}) } 
+    content_for(:meta_keywords) { content_tag(:meta, nil, {:name => "keywords",  :content => keywords}) }
   end
 
   def meta_description(description)
