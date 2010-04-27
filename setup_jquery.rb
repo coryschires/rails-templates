@@ -33,4 +33,4 @@ ERB
 
 # include rails.js to replace defalult prototype helpers
 rails_js = run "curl http://github.com/rails/jquery-ujs/raw/59dd91d945570391f905b1e40444e5921dbc2b8f/src/rails.js"
-file 'public/javascripts/rails.js', "#{rails_js}"
+file 'public/javascripts/rails.js', "#{rails_js}", :force => true
