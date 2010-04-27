@@ -1,17 +1,33 @@
 # removes unnecessary files created by rails generator
 apply "http://github.com/coryschires/rails-templates/raw/master/remove_clutter.rb"
 
-# prepares project for jquery rather than protoype
+# setup javascripts
 apply "http://github.com/coryschires/rails-templates/raw/master/setup_jquery.rb"
 
-# install sass gem and add reset, utilities, basic_style, and application templates
+# install stylesheets (using sass)
 apply "http://github.com/coryschires/rails-templates/raw/master/setup_sass.rb"
 
-# create admin section - including admin controller and style sheet
+# add templates
+    # application_controller.rb
+    # layout_helper.rb
+    # application.html.erb    
+    
 
-# install devise authentication - prompts for configuration options
+# setup testing evnironment
+
+
+# create admin section (optional)
+    # admin.js
+    # admin.sass    
+    # admin.html.erb
+    # generate admin controller
+    # replace dashboard.html.erb
+
+
+# install authentication with devise (optional)
+
+# setup git repository (optional)
 
 # bundle any required gems
 # run 'bundle install'
 
-# setup git repo and push initial commit
