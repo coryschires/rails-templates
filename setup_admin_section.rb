@@ -1,0 +1,1 @@
+generate(:controller, "admin dashboard")

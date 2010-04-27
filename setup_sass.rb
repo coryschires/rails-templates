@@ -1,0 +1,2 @@
+# require gem
+gem 'haml'
