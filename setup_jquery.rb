@@ -32,6 +32,5 @@ ERB
 
 
 # include rails.js to replace defalult prototype helpers
-# download edge version at: http://github.com/rails/jquery-ujs.git
-file 'public/javascripts/rails.js', 
-"#{apply 'http://github.com/rails/jquery-ujs/raw/59dd91d945570391f905b1e40444e5921dbc2b8f/src/rails.js'}"
+rails_js = run "curl http://github.com/rails/jquery-ujs/raw/59dd91d945570391f905b1e40444e5921dbc2b8f/src/rails.js"
+file 'public/javascripts/rails.js', "#{rails_js}"
