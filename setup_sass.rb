@@ -2,10 +2,10 @@
 gem 'haml'
 
 # grab sass templates
-reset = run "curl "
-utilities = run "curl "
-basic = run "curl"
-application = run "curl"
+reset = run "curl http://github.com/coryschires/rails-templates/raw/master/sass-templates/_reset.sass"
+utilities = run "curl http://github.com/coryschires/rails-templates/raw/master/sass-templates/_utilities.sass"
+basic = run "curl http://github.com/coryschires/rails-templates/raw/master/sass-templates/_basic.sass"
+application = run "curl http://github.com/coryschires/rails-templates/raw/master/sass-templates/application.sass"
 
 # add them to the sass folder
 file 'public/stylesheets/sass/_reset.sass', "#{reset}"
