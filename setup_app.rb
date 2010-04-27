@@ -1,8 +1,8 @@
 # removes unnecessary files created by rails generator
-apply "https://github.com/coryschires/rails-templates/raw/master/remove_clutter.rb"
+apply "http://github.com/coryschires/rails-templates/raw/master/remove_clutter.rb"
 
 # prepares project for jquery rather than protoype
-apply "https://github.com/coryschires/rails-templates/raw/master/setup_jquery.rb"
+# apply "https://github.com/coryschires/rails-templates/raw/master/setup_jquery.rb"
 
 # install sass gem and add reset, utilities, basic_style, and application templates
 
