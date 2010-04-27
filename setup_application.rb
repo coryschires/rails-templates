@@ -1,5 +1,9 @@
 # removes unnecessary files created by rails generator
-apply "http://github.com/coryschires/rails-templates/raw/master/remove_clutter.rb"
+run 'rm README'
+run 'rm public/index.html'
+run 'rm public/favicon.ico'
+run 'rm public/images/rails.png'
+run 'touch README'
 
 # setup javascripts
 apply "http://github.com/coryschires/rails-templates/raw/master/setup_jquery.rb"
