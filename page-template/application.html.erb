@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Application</title>
+    <%= stylesheet_link_tag 'application' %>
+    <%= javascript_include_tag 'http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js' %>
+    <%= javascript_include_tag 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js' %>
+    <%= javascript_include_tag 'rails', 'application' %>
+    
+    <%= html5 'http://html5shiv.googlecode.com/svn/trunk/html5.js' %>
+    <%= csrf_meta_tag %>
+</head>
+<body>  
+    <div id="pagewrap">
+        <header></header>
+        
+        <%= yield %>
+        
+        <footer></footer>
+    </div><!-- pagewrap -->
+</body>
+</html>

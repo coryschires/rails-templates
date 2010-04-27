@@ -5,6 +5,7 @@ apply "http://github.com/coryschires/rails-templates/raw/master/remove_clutter.r
 apply "http://github.com/coryschires/rails-templates/raw/master/setup_jquery.rb"
 
 # install sass gem and add reset, utilities, basic_style, and application templates
+apply "http://github.com/coryschires/rails-templates/raw/master/setup_sass.rb"
 
 # create admin section - including admin controller and style sheet
 
