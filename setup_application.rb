@@ -22,7 +22,7 @@ file 'app/views/layouts/application.html.erb', application_layout, :force => tru
     
 # create admin section (optional)
 if yes?("Would you like to generate an admin controller?")
-    file 'http://github.com/coryschires/rails-templates/raw/master/setup_admin.rb'
+    apply 'http://github.com/coryschires/rails-templates/raw/master/setup_admin.rb'
 end
 
 # setup testing evnironment (optional)
