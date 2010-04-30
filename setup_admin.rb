@@ -14,10 +14,5 @@ admin_layout = run 'curl http://github.com/coryschires/rails-templates/raw/maste
 file 'app/views/layouts/admin.html.erb', admin_layout
 
 # overwrite admin dashboard
-
-
-
-# admin.sass 
-# admin.html.erb
-# generate admin controller
-# replace dashboard.html.erb
+admin_dashboard = 'curl http://github.com/coryschires/rails-templates/raw/master/admin-templates/dashboard.html.erb'
+file 'app/views/admin/dashboard.html.erb', admin_dashboard

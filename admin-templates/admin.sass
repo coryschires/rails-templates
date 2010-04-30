@@ -2,4 +2,157 @@
 
 @import reset.sass
 @import utilities.sass
+@import sticky_footer.sass
 
+body
+  :font-size 62.5%
+  :font-family Helvetica, Verdana, Arial, sans-serif
+  :color #333
+
+
+hr
+  :background #e0e0e0
+  :height 5px
+  :border none
+  :margin 0 0 30px 0
+
+  &.subheader
+    :background #e0e0e0
+    :height 3px
+    :border none
+    :margin 0 0 10px 0
+    :width 60%
+
+
+
+.emphasis
+  :color #F68A00
+
+//------------------------------------------------------------------------------------------------------------------
+//                                                    TYPOGRAPHY                    
+//------------------------------------------------------------------------------------------------------------------
+p, li 
+  :font-size 12px
+  :line-height 14px
+  :margin 0 0 10px 0
+  
+a
+  :color #F68A00
+  &:visited
+    :color #F68A00
+  &:hover
+    :text-decoration underline
+
+h1
+  :font-size 45px
+  :padding 100px 0 5px 0
+  :letter-spacing 2px
+h2
+  :font-size 15px
+  :margin -4px 0 5px 0
+  :font-weight normal
+h3
+  :font-size 18px
+  :margin 40px 0 0 0
+
+//------------------------------------------------------------------------------------------------------------------
+//                                                    STRUCTURE                    
+//------------------------------------------------------------------------------------------------------------------
+#pagewrap
+  :width 970px
+  :margin auto
+  :position relative
+
+#nav
+  :float right
+  :margin-top 20px
+  :font-size 12px
+  :letter-spacing 0.5px
+
+#subnav
+  :font-size 11px
+  :text-align right
+  :margin-top 10px
+
+#flash_notice
+  :font-size 12px
+  :padding 7px 7px 5px 7px
+  :background #fde8cc
+  :border solid 1px #F68A00
+  :margin 0 0 10px 0
+
+#errorExplanation
+  :background #fde8cc
+  :border solid 1px #F68A00
+  :padding 15px 15px 5px 15px
+  :margin-bottom 20px
+
+  h2
+    :font-size 18px
+    :margin 0 0 10px 0
+    :letter-spacing 0.5px
+    :text-transform uppercase
+
+  ul
+    :padding 0 0 0 20px
+    :margin 0
+
+.fieldWithErrors
+  :font-size 12px
+  :color #F68A00
+
+.button
+  :display block
+  :margin 10px 0 30px 0
+  :border none
+  :padding 0
+
+  &.link
+    :float right
+
+//------------------------------------------------------------------------------------------------------------------
+//                                                    FORMS                    
+//------------------------------------------------------------------------------------------------------------------
+input
+  :border 2px #e0e0e0 solid
+  :padding 3px
+  :margin-bottom 3px
+
+label
+  :display block
+  :margin-bottom 2px
+
+
+//------------------------------------------------------------------------------------------------------------------
+//                                                    FOOTER                    
+//------------------------------------------------------------------------------------------------------------------
+html, body, #pagewrap
+  :height 100%
+
+body > #pagewrap
+  :height auto
+  :min-height 100%
+
+#main
+  :overflow auto
+  :padding-bottom 40px
+
+#footer
+  :position relative
+  :margin-top -40px
+  :height 40px
+  :clear both
+  :background #e0e0e0
+
+  #copyright
+    :font-size 11px
+    :width 970px
+    :margin auto
+    :padding 18px 0 0 0
+
+body:before
+  :content ""
+  :height 100%
+  :float left
+  :width 0
+  :margin-top -32767px
