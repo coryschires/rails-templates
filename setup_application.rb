@@ -19,7 +19,6 @@ application_layout = run "curl http://github.com/coryschires/rails-templates/raw
 file 'app/controllers/application_controller.rb', application_controller, :force => true
 file 'app/helpers/layout_helper.rb', layout_helper, :force => true
 file 'app/views/layouts/application.html.erb', application_layout, :force => true
-
     
 # create admin section (optional)
 # apply "http://github.com/coryschires/rails-templates/raw/master/setup_admin_section.rb"
@@ -33,8 +32,8 @@ file 'app/views/layouts/application.html.erb', application_layout, :force => tru
 
 # install authentication with devise (optional)
 
-# setup git repository (optional)
+# initialize git repository (optional)
 
 # bundle any required gems
-# run 'bundle install'
+run 'bundle install'
 

@@ -1,4 +1,4 @@
-# setup git repo
+# setup git repository
 file '.gitignore', <<-FILE
 .DS_Store
 log/*.log

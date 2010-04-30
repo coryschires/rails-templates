@@ -16,7 +16,3 @@ file 'public/javascripts/jquery.validate.js', validate_js
 file 'public/javascripts/css_browser_selector.js', css_browser_selector_js
 file 'public/javascripts/jquery.browser.js', js_browser_selector_js
 file 'public/javascripts/application.js', application_js, :force => true
-
-
-# adjust application layout to include: jquery, jquery ui, HTML5 enabling script (requires helper)
-# file 'app/views/layouts/application.html.erb'

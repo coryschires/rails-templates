@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title><%= (yield(:title) || "Untitled") %></title>
+    <title><%= yield(:title) || "Untitled" %></title>
 	<%= yield(:meta_keywords) %>
 	<%= yield(:meta_description) %>
 
@@ -16,11 +16,11 @@
 
     <%= javascript_include_tag 'application' %>
     <%= stylesheet_link_tag 'application' %>
-
 </head>
 <body>  
     <div id="pagewrap">
         <header></header>
+        <nav></nav>        
         
         <%= yield %>
         

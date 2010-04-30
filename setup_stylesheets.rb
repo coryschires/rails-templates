@@ -1,4 +1,4 @@
-# require gem
+# require haml & sass
 gem 'haml'
 
 # grab sass templates
