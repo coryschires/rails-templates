@@ -21,12 +21,9 @@ file 'app/helpers/layout_helper.rb', layout_helper, :force => true
 file 'app/views/layouts/application.html.erb', application_layout, :force => true
     
 # create admin section (optional)
-# apply "http://github.com/coryschires/rails-templates/raw/master/setup_admin_section.rb"
-    # admin.js
-    # admin.sass    
-    # admin.html.erb
-    # generate admin controller
-    # replace dashboard.html.erb
+if yes?("Would you like to generate an admin controller?")
+    file 'http://github.com/coryschires/rails-templates/raw/master/setup_admin.rb'
+end
 
 # setup testing evnironment (optional)
 
