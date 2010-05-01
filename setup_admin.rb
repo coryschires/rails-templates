@@ -1,9 +1,11 @@
 # create admin controller
 generate(:controller, 'admin', 'dashboard')
 
-# create admin style sheet
+# create admin stylesheets
 admin_style = run 'curl http://github.com/coryschires/rails-templates/raw/master/admin-templates/admin.sass'
+admin_defines = run 'curl http://github.com/coryschires/rails-templates/raw/master/admin-templates/_admin_defines.sass'
 file 'public/stylesheets/sass/admin.sass', admin_style
+file 'public/stylesheets/sass/_admin_defines.sass', admin_defines
 
 # create admin javascript
 admin_js = run 'curl http://github.com/coryschires/rails-templates/raw/master/admin-templates/admin.js'
@@ -14,5 +16,5 @@ admin_layout = run 'curl http://github.com/coryschires/rails-templates/raw/maste
 file 'app/views/layouts/admin.html.erb', admin_layout
 
 # overwrite admin dashboard
-admin_dashboard = 'curl http://github.com/coryschires/rails-templates/raw/master/admin-templates/dashboard.html.erb'
-file 'app/views/admin/dashboard.html.erb', admin_dashboard
+admin_dashboard = run 'curl http://github.com/coryschires/rails-templates/raw/master/admin-templates/dashboard.html.erb'
+file 'app/views/admin/dashboard.html.erb', admin_dashboard, :force => true

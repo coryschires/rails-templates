@@ -1,0 +1,72 @@
+// This file contains variables and mixins for admin.sass. Include this file into 
+// another stylesheet using @import admin_defines.sass. There's no need to include 
+// the initial underscore.
+
+// variables
+!footer_height = 40px
+!pagewrap_width = 970px
+
+// colors
+!accent = #F68A00
+!light_accent = #FDE8CC
+!dark_gray = #333333
+!light_gray = #E0E0E0
+
+// mixings
+=message_box
+  :border-width 1px
+  :border-style solid
+  :border-color = !accent
+  :background = !light_accent
+
+=form_border
+  :border-color = !light_gray
+  :border-width 2px
+  :border-style solid
+  
+=basic_buttons
+  .button
+    :display inline-block
+    :outline none
+    :cursor pointer
+    :text-align center
+    :text-decoration none
+    :font 14px/100% Arial, Helvetica, sans-serif
+    :padding .5em 2em .55em
+    :text-shadow 0 1px 1px rgba(0,0,0,.3)
+    :-webkit-border-radius 0.5em
+    :-moz-border-radius 0.5em
+    :border-radius 0.5em
+    :-webkit-box-shadow 0 1px 2px rgba(0,0,0,.2)
+    :-moz-box-shadow 0 1px 2px rgba(0,0,0,.2)
+    :box-shadow 0 1px 2px rgba(0,0,0,.2)
+  
+  .button:hover 
+    :text-decoration none
+  .button:active 
+    :position relative
+    :top 1px
+
+=sticky_footer
+  html, body, #pagewrap
+    :height 100%
+
+  body > #pagewrap
+    :height auto
+    :min-height 100%
+
+  #main
+    :overflow auto
+    :padding-bottom = !footer_height
+
+  // opera fix    
+  body:before
+    :content ""
+    :height 100%
+    :float left
+    :width 0
+    :margin-top -32767px
+
+  // ie 8 fix
+  .win.ie8 #pagewrap 
+    :display table

@@ -8,7 +8,7 @@ module LayoutHelper
     @show_title
   end
   
-  def sub_title(sub_title)
+  def subtitle(sub_title)
     content_for(:sub_title) { sub_title }
   end
 
