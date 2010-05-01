@@ -1,4 +1,19 @@
-@import defines.sass
+// variables
+!footer_height = 40px
+!pagewrap_width = 40px
+
+// colors
+!orange = #F68A00
+!light_orange = #FDE8CC
+!dark_gray = #333333
+!light_gray = #E0E0E0
+
+// mixings
+=message_box
+  :border-width 1px
+  :border-style solid
+  :border-color = !orange
+  :background = !light_orange  
 
 @import reset.sass
 @import utilities.sass
@@ -7,26 +22,23 @@
 body
   :font-size 62.5%
   :font-family Helvetica, Verdana, Arial, sans-serif
-  :color #333
-
+  :color = !dark_gray 
 
 hr
-  :background #e0e0e0
+  :background = !light_gray
   :height 5px
   :border none
   :margin 0 0 30px 0
 
   &.subheader
-    :background #e0e0e0
+    :background = !light_gray
     :height 3px
     :border none
     :margin 0 0 10px 0
     :width 60%
 
-
-
 .emphasis
-  :color #F68A00
+  :color = !orange
 
 //------------------------------------------------------------------------------------------------------------------
 //                                                    TYPOGRAPHY                    
@@ -37,9 +49,9 @@ p, li
   :margin 0 0 10px 0
   
 a
-  :color #F68A00
+  :color = !orange
   &:visited
-    :color #F68A00
+    :color = !orange
   &:hover
     :text-decoration underline
 
@@ -59,7 +71,7 @@ h3
 //                                                    STRUCTURE                    
 //------------------------------------------------------------------------------------------------------------------
 #pagewrap
-  :width 970px
+  :width = !pagewrap_width
   :margin auto
   :position relative
 
@@ -77,13 +89,11 @@ h3
 #flash_notice
   :font-size 12px
   :padding 7px 7px 5px 7px
-  :background #fde8cc
-  :border solid 1px #F68A00
+  +message_box
   :margin 0 0 10px 0
 
 #errorExplanation
-  :background #fde8cc
-  :border solid 1px #F68A00
+  +message_box
   :padding 15px 15px 5px 15px
   :margin-bottom 20px
 
@@ -99,7 +109,7 @@ h3
 
 .fieldWithErrors
   :font-size 12px
-  :color #F68A00
+  :color = !orange
 
 .button
   :display block
@@ -114,7 +124,9 @@ h3
 //                                                    FORMS                    
 //------------------------------------------------------------------------------------------------------------------
 input
-  :border 2px #e0e0e0 solid
+  :border-color = !light_gray
+  :border-width 2px
+  :border-style solid
   :padding 3px
   :margin-bottom 3px
 
@@ -126,6 +138,20 @@ label
 //------------------------------------------------------------------------------------------------------------------
 //                                                    FOOTER                    
 //------------------------------------------------------------------------------------------------------------------
+#footer
+  :position relative
+  :margin-top = !footer_height * -1
+  :height = !footer_height
+  :clear both
+  :background = !light_gray
+
+  #copyright
+    :font-size 11px
+    :width = !pagewrap_width
+    :margin auto
+    :padding 18px 0 0 0
+
+
 html, body, #pagewrap
   :height 100%
 
@@ -135,24 +161,16 @@ body > #pagewrap
 
 #main
   :overflow auto
-  :padding-bottom 40px
+  :padding-bottom = !footer_height
 
-#footer
-  :position relative
-  :margin-top -40px
-  :height 40px
-  :clear both
-  :background #e0e0e0
-
-  #copyright
-    :font-size 11px
-    :width 970px
-    :margin auto
-    :padding 18px 0 0 0
-
+// opera fix    
 body:before
   :content ""
   :height 100%
   :float left
   :width 0
   :margin-top -32767px
+
+// ie 8 fix
+.win.ie8 #pagewrap 
+  :display table
