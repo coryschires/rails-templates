@@ -3,8 +3,8 @@
 !pagewrap_width = 40px
 
 // colors
-!orange = #F68A00
-!light_orange = #FDE8CC
+!accent = #F68A00
+!light_accent = #FDE8CC
 !dark_gray = #333333
 !light_gray = #E0E0E0
 
@@ -12,8 +12,8 @@
 =message_box
   :border-width 1px
   :border-style solid
-  :border-color = !orange
-  :background = !light_orange  
+  :border-color = !accent
+  :background = !light_accent  
 
 @import reset.sass
 @import utilities.sass
@@ -38,7 +38,7 @@ hr
     :width 60%
 
 .emphasis
-  :color = !orange
+  :color = !accent
 
 //------------------------------------------------------------------------------------------------------------------
 //                                                    TYPOGRAPHY                    
@@ -49,9 +49,9 @@ p, li
   :margin 0 0 10px 0
   
 a
-  :color = !orange
+  :color = !accent
   &:visited
-    :color = !orange
+    :color = !accent
   &:hover
     :text-decoration underline
 
@@ -109,7 +109,7 @@ h3
 
 .fieldWithErrors
   :font-size 12px
-  :color = !orange
+  :color = !accent
 
 .button
   :display block
