@@ -12,9 +12,9 @@ apply "http://github.com/coryschires/rails-templates/raw/master/setup_javascript
 apply "http://github.com/coryschires/rails-templates/raw/master/setup_stylesheets.rb"
 
 # add required templates
-application_controller = run "curl http://github.com/coryschires/rails-templates/raw/master/app-templates/application_controller.rb"
-layout_helper = run "curl http://github.com/coryschires/rails-templates/raw/master/app-templates/layout_helper.rb"
-application_layout = run "curl http://github.com/coryschires/rails-templates/raw/master/app-templates/application.html.erb"
+application_controller = run "curl -sS http://github.com/coryschires/rails-templates/raw/master/app-templates/application_controller.rb"
+layout_helper = run "curl -sS http://github.com/coryschires/rails-templates/raw/master/app-templates/layout_helper.rb"
+application_layout = run "curl -sS http://github.com/coryschires/rails-templates/raw/master/app-templates/application.html.erb"
 
 file 'app/controllers/application_controller.rb', application_controller, :force => true
 file 'app/helpers/layout_helper.rb', layout_helper, :force => true
@@ -25,11 +25,16 @@ if yes?("Would you like to generate an admin controller?")
     apply 'http://github.com/coryschires/rails-templates/raw/master/setup_admin.rb'
 end
 
+# initialize git repository (optional)
+if yes?("Would you like to use GIT with this project?")
+  apply 'http://github.com/coryschires/rails-templates/raw/master/setup_git.rb'
+end
+
 # setup testing evnironment (optional)
 
 # install authentication with devise (optional)
 
-# initialize git repository (optional)
+
 
 # bundle any required gems
 run 'bundle install'
