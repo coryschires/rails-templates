@@ -1,4 +1,4 @@
-default_generator_config = /# Configure\sgenerators\svalues.+end/
+default_generator_config = /#\sConfigure\sgenerators\svalues.+end/
 
 custom_generator_config = %q{
 config.generators do |g|
