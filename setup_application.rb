@@ -3,11 +3,15 @@ run 'rm README'
 run 'rm public/index.html'
 run 'rm public/favicon.ico'
 run 'rm public/images/rails.png'
+run 'rm .gitignore'
 run 'touch README'
 
 # rotate log files (50 files max at 1MB each)
-log_path = '#{Rails.root}/log/#{Rails.env}.log'
-gsub_file 'config/application.rb', /(< Rails::Application.*)/ , "\\1\n config.logger = Logger.new(\"#{log_path}\", 50, 1048576)"
+# log_path = '#{Rails.root}/log/#{Rails.env}.log'
+# gsub_file 'config/application.rb', /(< Rails::Application.*)/ , "\\1\n config.logger = Logger.new(\"#{log_path}\", 50, 1048576)"
+
+# setup Gemfile to include test and development groups - using rspec and friends
+apply 'http://github.com/coryschires/rails-templates/raw/master/setup_gemfile.rb'
 
 # setup javascripts
 apply "http://github.com/coryschires/rails-templates/raw/master/setup_javascripts.rb"
@@ -23,9 +27,6 @@ file 'app/controllers/application_controller.rb', application_controller, :force
 file 'app/helpers/layout_helper.rb', layout_helper, :force => true
 file 'app/views/layouts/application.html.erb', application_layout, :force => true
 
-# setup testing evnironment
-apply 'http://github.com/coryschires/rails-templates/raw/master/setup_testing.rb'
-
 # setup custom configuration for rails generators
 apply 'http://github.com/coryschires/rails-templates/raw/master/setup_generators.rb'
 
@@ -35,6 +36,8 @@ if yes?("Would you like to generate an admin controller?")
 end
 
 # install authentication with devise (optional)
+
+
 
 
 # initialize git repository (optional)
