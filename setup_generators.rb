@@ -1,6 +1,7 @@
 default_generator_config = /\s+# Configure generators values.+\n.+\n.+\n.+\n.+\n.+/
 
 custom_generator_config = %q{
+
     config.generators do |g|
       g.template_engine       :haml
       g.test_framework        :rspec
