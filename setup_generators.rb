@@ -1,6 +1,4 @@
-# group :development do
-#   gem "rails3-generators"
-# end
+gem "rails3-generators", :group => :development
 
 default_generator_configuration = %q{
 # Configure generators values. Many other options are available, be sure to check the documentation.
