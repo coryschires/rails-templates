@@ -11,6 +11,10 @@ run 'touch README'
 # gsub_file 'config/application.rb', /(< Rails::Application.*)/ , "\\1\n config.logger = Logger.new(\"#{log_path}\", 50, 1048576)"
 
 # setup Gemfile to include test and development groups - using rspec and friends
+gem_file = run "curl -sS http://github.com/coryschires/rails-templates/raw/master/app-templates/Gemfile"
+file 'Gemfile', gem_file, :force => true
+
+
 apply 'http://github.com/coryschires/rails-templates/raw/master/setup_gemfile.rb'
 
 # setup javascripts
