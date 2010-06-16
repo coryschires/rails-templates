@@ -14,9 +14,6 @@ run 'touch README'
 gem_file = run "curl -sS http://github.com/coryschires/rails-templates/raw/master/app-templates/Gemfile"
 file 'Gemfile', gem_file, :force => true
 
-
-apply 'http://github.com/coryschires/rails-templates/raw/master/setup_gemfile.rb'
-
 # setup javascripts
 apply "http://github.com/coryschires/rails-templates/raw/master/setup_javascripts.rb"
 
