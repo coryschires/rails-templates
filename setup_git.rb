@@ -1,14 +1,12 @@
 # setup git repository
 file '.gitignore', <<-FILE
+.bundle
 .DS_Store
 log/*.log
 tmp/**/*
-config/database.yml
+db/schema.rb
 db/*.sqlite3
-public/uploads/*
-gems/*
-!gems/cache
-!gems/bundler
+public/stylesheets/*.css
 FILE
 
 git :init

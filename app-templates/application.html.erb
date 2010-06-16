@@ -1,30 +1,27 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title><%= yield(:title) || "Untitled" %></title>
-	<%= yield(:meta_keywords) %>
-	<%= yield(:meta_description) %>
+!!!
+%html
+%head
+  %title=yield(:title) || "Untitled"
+  =yield(:meta_keywords)
+  =yield(:meta_description)
 
-    <%= html5 'http://html5shiv.googlecode.com/svn/trunk/html5.js' %>
-    <%= csrf_meta_tag %>
+  =html5 'http://html5shiv.googlecode.com/svn/trunk/html5.js'
+  =csrf_meta_tag
 
-    <%= javascript_include_tag 'http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js' %>
-    <%= javascript_include_tag 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js' %>
-    <%= javascript_include_tag 'rails', 'jquery.browser', 'jquery.validate' %>
+  =javascript_include_tag 'http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js'
+  =javascript_include_tag 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js'
+  =javascript_include_tag 'rails', 'jquery.browser', 'jquery.validate'
 
-	<%= yield(:head) %>
+	=yield(:head)
 
-    <%= javascript_include_tag 'application' %>
-    <%= stylesheet_link_tag 'application' %>
-</head>
-<body>  
-    <div id="pagewrap">
-        <header></header>
-        <nav></nav>        
-        
-        <%= yield %>
-        
-        <footer></footer>
-    </div><!-- pagewrap -->
-</body>
-</html>
+  =javascript_include_tag 'application'
+  =stylesheet_link_tag 'application'
+
+%body
+  #pagewrap
+    %header
+    %nav
+    
+    =yield
+    
+    %footer

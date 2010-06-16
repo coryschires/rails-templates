@@ -1,53 +1,42 @@
-<!DOCTYPE html>
-<html>
-<head>
+!!!
+%html
+%head
+  %title=(yield(:title) || "Untitled")
+	=yield(:meta_keywords)
+	=yield(:meta_description)
 
-    <title><%= (yield(:title) || "Untitled") %></title>
-	<%= yield(:meta_keywords) %>
-	<%= yield(:meta_description) %>
+  = html5 'http://html5shiv.googlecode.com/svn/trunk/html5.js'
+  = csrf_meta_tag
 
-    <%= html5 'http://html5shiv.googlecode.com/svn/trunk/html5.js' %>
-    <%= csrf_meta_tag %>
+  =javascript_include_tag 'http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js'
+  =javascript_include_tag 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js'
+  =javascript_include_tag 'rails', 'jquery.browser', 'jquery.validate'
 
-    <%= javascript_include_tag 'http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js' %>
-    <%= javascript_include_tag 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js' %>
-    <%= javascript_include_tag 'rails', 'css_browser_selector', 'jquery.browser', 'jquery.validate' %>
+	=yield(:head)
 
-	<%= yield(:head) %>
+  =javascript_include_tag 'admin'
+  =stylesheet_link_tag 'admin'
+  
+%body
+  #pagewrap
+    %nav
+      =link_to "Dashboard", :controller => "admin", :action => "dashboard"
+      &nbsp;|&nbsp;
+      =link_to "Navigation", "#"
+      &nbsp;|&nbsp;
+      =link_to "Navigation", "#"
+      &nbsp;|&nbsp;
+      =link_to "Logout", ""
 
-    <%= javascript_include_tag 'admin' %>
-    <%= stylesheet_link_tag 'admin' %>
+    = yield(:title) if show_title?
+    = yield(:sub_title)
 
-</head>
-<body>  
-    <div id="pagewrap">        
-        <nav>
-          <%= link_to "Dashboard", :controller => "admin", :action => "dashboard" %> &nbsp;|&nbsp;
-          <%= link_to "Navigation", "#" %> &nbsp;|&nbsp;
-          <%= link_to "Navigation", "#" %> &nbsp;|&nbsp;
-          <%= link_to "Logout", "" %>
-        </nav>
+    -flash.each do |name, msg|
+      = content_tag :div, msg, :id => "flash_#{name}"
 
-      <h1><%= yield(:title) if show_title? %></h1>
-
-      <h2><%= yield(:sub_title) %></h2>
-
-      <% flash.each do |name, msg| %>
-        <%= content_tag :div, msg, :id => "flash_#{name}" %>
-      <% end %>
-      <hr />
-
-      <div id="main">
-        <%= yield %>
-      </div><!--main-->
-
-    </div><!-- pagewrap -->
+    %hr
+    #main=yield
     
-    <footer>
-      <div id="copyright">&copy; <%= Time.now.year %> Ones &amp; Zeros Web Design</div>
-    </footer>
-</body>
-</html>
-
-
-
+  %footer
+    #copyright
+      ==&copy; #{Time.now.year} Ones &amp; Zeros Web Design

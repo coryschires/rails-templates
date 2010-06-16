@@ -5,6 +5,10 @@ run 'rm public/favicon.ico'
 run 'rm public/images/rails.png'
 run 'touch README'
 
+# rotate log files (50 files max at 1MB each)
+log_path = '#{Rails.root}/log/#{Rails.env}.log'
+gsub_file 'config/application.rb', /(< Rails::Application.*)/ , "\\1\n config.logger = Logger.new(\"#{log_path}\", 50, 1048576)"
+
 # setup javascripts
 apply "http://github.com/coryschires/rails-templates/raw/master/setup_javascripts.rb"
 
@@ -15,27 +19,28 @@ apply "http://github.com/coryschires/rails-templates/raw/master/setup_stylesheet
 application_controller = run "curl -sS http://github.com/coryschires/rails-templates/raw/master/app-templates/application_controller.rb"
 layout_helper = run "curl -sS http://github.com/coryschires/rails-templates/raw/master/app-templates/layout_helper.rb"
 application_layout = run "curl -sS http://github.com/coryschires/rails-templates/raw/master/app-templates/application.html.erb"
-
 file 'app/controllers/application_controller.rb', application_controller, :force => true
 file 'app/helpers/layout_helper.rb', layout_helper, :force => true
 file 'app/views/layouts/application.html.erb', application_layout, :force => true
-    
+
+# setup testing evnironment
+apply 'http://github.com/coryschires/rails-templates/raw/master/setup_testing.rb'
+
+# setup custom configuration for rails generators
+apply 'http://github.com/coryschires/rails-templates/raw/master/setup_generators.rb'
+
 # create admin section (optional)
 if yes?("Would you like to generate an admin controller?")
     apply 'http://github.com/coryschires/rails-templates/raw/master/setup_admin.rb'
 end
+
+# install authentication with devise (optional)
+
 
 # initialize git repository (optional)
 if yes?("Would you like to use GIT with this project?")
   apply 'http://github.com/coryschires/rails-templates/raw/master/setup_git.rb'
 end
 
-# setup testing evnironment (optional)
-
-# install authentication with devise (optional)
-
-
-
 # bundle any required gems
 run 'bundle install'
-
