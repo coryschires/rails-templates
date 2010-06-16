@@ -1,6 +1,6 @@
 gem "rails3-generators", :group => :development
 
-default_generator_configuration = %q{
+default_generator_config = %q{
 # Configure generators values. Many other options are available, be sure to check the documentation.
 # config.generators do |g|
 #   g.orm             :active_record
@@ -9,7 +9,7 @@ default_generator_configuration = %q{
 # end
 }
 
-custom_generator_configuration = %q{
+custom_generator_config = %q{
 config.generators do |g|
   g.template_engine       :haml
   g.test_framework        :rspec
@@ -19,4 +19,4 @@ config.generators do |g|
 end
 }
 
-gsub_file 'config/application.rb', /#{generator_instructions}/, custom_generator_configuration
+gsub_file 'config/application.rb', /#{default_generator_config}/, custom_generator_config
