@@ -8,7 +8,7 @@ run 'touch README'
 
 # rotate log files (50 files max at 1MB each)
 log_path = '#{Rails.root}/log/#{Rails.env}.log'
-gsub_file 'config/application.rb', /(< Rails::Application.*)/ , "\\1\n config.logger = Logger.new(\"#{log_path}\", 50, 1048576)"
+gsub_file 'config/application.rb', /(< Rails::Application.*)/ , "\\1\n\n\t\tconfig.logger = Logger.new(\"#{log_path}\", 50, 1048576)"
 
 # setup Gemfile to include test and development groups - using rspec and friends
 gem_file = run "curl -sS http://github.com/coryschires/rails-templates/raw/master/app-templates/Gemfile"
