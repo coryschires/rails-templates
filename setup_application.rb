@@ -47,4 +47,4 @@ if yes?("Would you like to use GIT with this project?")
 end
 
 # bundle any required gems
-run 'bundle install'
+# run 'bundle install'
